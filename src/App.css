@@ -131,3 +131,52 @@ button:hover {
 
   color: black;
 }
+
+.releases {
+  padding: 120px 80px;
+}
+
+.releases h2 {
+  margin-bottom: 48px;
+
+  font-size: 48px;
+
+  font-family: "Aduaine";
+}
+
+.release-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(280px, 1fr)
+    );
+
+  gap: 32px;
+}
+
+.release-card {
+  transition: .3s;
+}
+
+.release-card:hover {
+  transform:
+    translateY(-8px);
+}
+
+.placeholder {
+  aspect-ratio: 1;
+
+  background: #111;
+
+  border: 1px solid #222;
+}
+
+.release-card h3 {
+  margin-top: 16px;
+
+  font-size: 14px;
+
+  letter-spacing: 2px;
+}

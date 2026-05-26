@@ -4,9 +4,12 @@ function Navbar() {
   return (
     <nav className="navbar">
 
-      <div className="logo">
-        ADUAINE
-      </div>
+      <Link
+      to="/"
+      className="logo"
+      >
+      ADUAINE
+      </Link>
 
       <div className="nav-links">
 

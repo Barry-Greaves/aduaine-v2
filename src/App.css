@@ -28,9 +28,23 @@ body {
 }
 
 .logo {
-  font-size: 22px;
-  letter-spacing: 4px;
+  font-family: "aduaine";
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 28px;
+
+  letter-spacing: 2px;
+
   font-weight: bold;
+
+  transition: .3s;
+}
+
+.logo:hover {
+  opacity: .7;
 }
 
 .nav-links {

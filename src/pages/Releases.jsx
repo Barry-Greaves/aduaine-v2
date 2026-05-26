@@ -1,13 +1,22 @@
+import { releases } from "../data/releases"
+import ReleaseCard from "../components/ReleaseCard"
+
 function Releases() {
   return (
-    <main>
+    <main className="releases-page">
+      <header className="page-header">
+        <h1>RELEASES</h1>
+        <p>Catalogue archive</p>
+      </header>
 
-      <h1>Releases</h1>
-
-      <p>
-        Coming soon
-      </p>
-
+      <section className="release-grid">
+        {releases.map((release) => (
+          <ReleaseCard
+            key={release.id}
+            release={release}
+          />
+        ))}
+      </section>
     </main>
   )
 }

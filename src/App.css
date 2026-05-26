@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "Aduaine";
+
+  src: url("/fonts/aduaine1.woff")
+       format("woff");
+
+  font-weight: normal;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  background: #0f0f0f;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  height: 72px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #222;
+}
+
+.logo {
+  font-size: 22px;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  color: #aaa;
+}
+
+.hero {
+  min-height: calc(100vh - 72px);
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 40px;
+}
+
+.hero h1 {
+  font-family: "aduaine";
+
+  font-size: clamp(70px, 14vw, 180px);
+
+  line-height: 0.85;
+
+  letter-spacing: 0.04em;
+
+  margin: 0;
+
+  text-transform: uppercase;
+
+  animation: fadeUp 1.5s ease;
+}
+
+.hero p {
+  margin-top: 20px;
+
+  color: #777;
+
+  font-size: 14px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+   animation: fadeUp 2s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+button {
+  margin-top: 48px;
+
+  background: transparent;
+
+  color: white;
+
+  border: 1px solid #333;
+
+  padding: 16px 32px;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+button:hover {
+  background: white;
+
+  color: black;
+}

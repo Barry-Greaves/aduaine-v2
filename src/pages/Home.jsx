@@ -13,12 +13,45 @@ function Home() {
     <main className="home-page">
       <section className="home-hero">
         <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-        >
-          ADUAINE
-        </motion.h1>
+  className="home-logo-word"
+  initial="hidden"
+  animate="visible"
+  variants={{
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.4,
+      },
+    },
+  }}
+>
+  {"ADUAINE".split("").map((letter, index) => (
+    <motion.span
+      key={index}
+      variants={{
+        hidden: {
+          opacity: 0,
+          y: 80,
+          rotateX: 90,
+          filter: "blur(12px)",
+        },
+        visible: {
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          filter: "blur(0px)",
+          transition: {
+            duration: 0.9,
+            ease: [0.16, 1, 0.3, 1],
+          },
+        },
+      }}
+    >
+      {letter}
+    </motion.span>
+  ))}
+</motion.h1>
 
         <motion.div
           className="latest-block"

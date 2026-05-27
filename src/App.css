@@ -11,6 +11,10 @@
   font-display: swap;
 }
 
+#root {
+  width: 100%;
+}
+
 body {
   margin: 0;
   background: #0f0f0f;
@@ -28,13 +32,13 @@ body {
 }
 
 .logo {
-  font-family: "aduaine";
+  
 
   color: white;
 
   text-decoration: none;
 
-  font-size: 28px;
+  font-size: 14px;
 
   letter-spacing: 2px;
 
@@ -81,7 +85,7 @@ body {
 .hero h1 {
   font-family: "aduaine";
 
-  font-size: clamp(70px, 14vw, 180px);
+  font-size: clamp(70px, 14vw, 240px);
 
   line-height: 0.85;
 
@@ -230,9 +234,23 @@ button:hover {
 .release-grid {
   display: grid;
 
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
   gap: 32px;
+}
+
+@media (max-width: 1200px) {
+  .release-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .release-grid {
+    grid-template-columns: 1fr;
+
+    gap: 48px;
+  }
 }
 
 .release-card {
@@ -354,15 +372,7 @@ button:hover {
   line-height: 1.1;
 }
 
-.release-info span {
-  display: block;
 
-  margin-top: 10px;
-
-  color: #666;
-
-  font-size: 13px;
-}
 
 .release-card {
   color: white;
@@ -509,4 +519,257 @@ button:hover {
   background: transparent;
 
   border-radius: 4px;
+}
+
+
+.home-page {
+  min-height: calc(100vh - 72px);
+}
+
+.home-hero {
+  padding: 48px 80px 120px;
+  overflow: hidden;
+}
+
+.home-hero h1 {
+  font-family: "Aduaine", Arial, sans-serif;
+  font-size: clamp(160px, 22vw, 510px);
+  font-weight: normal;
+  line-height: 0.8;
+  letter-spacing: 0.02em;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.latest-block p {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 0 40px;
+
+  color: #666;
+  font-size: 16px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.latest-block {
+  margin-top: 40px;
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.latest-block span {
+  display: block;
+
+  font-size: clamp(34px, 5vw, 84px);
+
+  font-weight: 300;
+
+  line-height: 0.92;
+
+  transition: 0.35s ease;
+}
+
+
+.latest-releases-row {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 72px;
+}
+
+.latest-release {
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+  color: white;
+}
+
+.latest-release-info {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.latest-release-info p {
+  margin: 0 0 12px;
+
+  color: #666;
+
+  font-size: 10px;
+
+  letter-spacing: 0.3em;
+
+  text-transform: uppercase;
+}
+
+.latest-release-info h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  font-weight: 300;
+
+  line-height: 1.05;
+}
+
+
+
+
+.latest-image {
+  width: 100%;
+
+  aspect-ratio: 1;
+
+  overflow: hidden;
+
+  background: #111;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.latest-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform .5s ease;
+}
+
+
+.latest-release span {
+  display: block;
+
+  margin-top: 20px;
+
+  font-size: clamp(28px, 2.6vw, 52px);
+
+  line-height: .95;
+
+  font-weight: 300;
+}
+
+.latest-release-info span {
+  display: block;
+
+  margin-top: 12px;
+
+  color: #666;
+
+  font-size: 14px;
+
+  font-weight: 300;
+
+  line-height: 1.2;
+}
+
+.latest-release:hover img {
+  transform: scale(1.06);
+
+  filter: brightness(1.1);
+}
+
+.latest-release:hover span {
+  transform: scale(1.1);
+  opacity: .9;
+}
+
+.home-merch-preview {
+  padding: 120px 80px 140px;
+  border-top: 1px solid #151515;
+}
+
+.home-merch-preview p {
+  margin-bottom: 60px;
+
+  text-align: center;
+
+  color: #555;
+
+  font-size: 14px;
+
+  letter-spacing: 0.35em;
+
+  text-transform: uppercase;
+}
+
+.merch-preview-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 72px;
+
+  width: 100%;
+}
+
+.merch-item {
+  text-decoration: none;
+
+  color: white;
+
+  text-align: center;
+}
+
+.merch-image {
+  overflow: hidden;
+
+  margin-bottom: 24px;
+
+  background: #050505;
+}
+
+.merch-image img {
+  width: 100%;
+
+  display: block;
+
+  transition: transform 0.5s ease;
+}
+
+.merch-item:hover img {
+  transform: scale(1.03);
+}
+
+.merch-title {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 20px;
+
+  font-weight: 300;
+}
+
+.merch-type {
+  display: block;
+
+  color: #666;
+
+  font-size: 15px;
+}
+
+.logo-mark img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: 0.3s ease;
+}
+
+.logo-mark:hover img {
+  opacity: 1;
+  transform: rotate(4deg) scale(1.04);
 }

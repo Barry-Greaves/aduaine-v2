@@ -8,7 +8,7 @@ function Navbar() {
       to="/"
       className="logo"
       >
-      ADUAINE
+      HOME
       </Link>
 
       <div className="nav-links">

@@ -1,6 +1,7 @@
 /* ================================
    Fonts
 ================================ */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap');
 
 @font-face {
   font-family: "Aduaine";
@@ -42,7 +43,7 @@ body {
   margin: 0;
   background: #0f0f0f;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "IBM Plex Mono", monospace;
 }
 
 button {
@@ -676,7 +677,7 @@ button:hover {
 
 .video-overlay h2 {
   margin: 0;
-
+  font-family: IBM Plex Mono, monospace;
   font-size: 24px;
 
   font-weight: 300;
@@ -684,7 +685,7 @@ button:hover {
 
 .video-overlay p {
   margin: 8px 0 0;
-
+  font-family: IBM Plex Mono, monospace;
   color: #777;
 
   font-size: 13px;
@@ -851,3 +852,25 @@ button:hover {
   color: #aaa;
 } 
 
+@media (max-width: 2000px) {
+  .menu-toggle {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    position: relative;
+    z-index: 9999;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+    background: transparent !important;
+
+    color: white !important;
+
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
+}

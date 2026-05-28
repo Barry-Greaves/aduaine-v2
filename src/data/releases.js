@@ -1,3 +1,6 @@
+import cover011Alt from "../assets/images/releases/aduaine-011-alt.jpg"
+import cover010Alt from "../assets/images/releases/aduaine-010-alt.jpg"
+import cover009Alt from "../assets/images/releases/aduaine-009-alt.jpg"
 import cover011 from "../assets/images/releases/aduaine-011.jpg"
 import cover010 from "../assets/images/releases/aduaine-010.jpg"
 import cover009 from "../assets/images/releases/aduaine-009.jpg"
@@ -22,6 +25,7 @@ catalog:"ADUAINE 011",
 title:"The Hexadecimal Era",
 artist:"Sleep Underwriter",
 cover:cover011,
+hoverCover: cover011Alt,
 formats: ["Vinyl", "Digital"],
 bandcampEmbed: "https://bandcamp.com/EmbeddedPlayer/album=2701337443/size=large/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/"
 },
@@ -33,6 +37,7 @@ catalog:"ADUAINE 010",
 title:"Is It Fake?",
 artist:"Hex Tulpa",
 cover:cover010,
+hoverCover: cover010Alt,
 formats: ["Vinyl", "Digital"],
 bandcampEmbed: "https://bandcamp.com/EmbeddedPlayer/album=87957352/size=large/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/"
 },
@@ -44,6 +49,7 @@ catalog:"ADUAINE 009",
 title:"System Collapse",
 artist:"Various Artists",
 cover:cover009,
+hoverCover: cover009Alt,
 formats: ["Tape", "Digital"],
 bandcampEmbed: "https://bandcamp.com/EmbeddedPlayer/album=938735709/size=large/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/"
 },

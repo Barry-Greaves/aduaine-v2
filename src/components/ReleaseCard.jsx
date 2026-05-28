@@ -8,9 +8,18 @@ function ReleaseCard({ release }) {
     >
       <div className="release-artwork">
         <img
+          className="release-image primary"
           src={release.cover}
           alt={release.title}
         />
+
+        {release.hoverCover && (
+          <img
+            className="release-image secondary"
+            src={release.hoverCover}
+            alt={`${release.title} alternate artwork`}
+          />
+        )}
       </div>
 
       <div className="release-info">

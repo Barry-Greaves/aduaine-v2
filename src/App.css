@@ -116,6 +116,33 @@ button:hover {
   color: #aaa;
 }
 
+.menu-toggle {
+  display: none;
+
+  margin: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 12px;
+
+  letter-spacing: 0.25em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.menu-toggle:hover {
+  background: transparent !important;
+  color: #aaa;
+}
+
 /* ================================
    Home Page
 ================================ */
@@ -131,7 +158,7 @@ button:hover {
 
 .home-logo-word {
   font-family: "Aduaine", Arial, sans-serif;
-  font-size: clamp(72px, 22vw, 500px);
+  font-size: clamp(48px, calc(12vw + 2vh), 540px);
   font-weight: normal;
   line-height: 0.8;
   letter-spacing: 0.02em;
@@ -307,7 +334,7 @@ button:hover {
 .page-header h1 {
   margin: 0 0 20px;
   font-family: "AdinaO";
-  font-size: clamp(64px, 12vw, 220px);
+  font-size: clamp(10px, calc(5vw + 1vh), 280px);
   font-weight: normal;
   line-height: 1.15;
 }
@@ -545,73 +572,10 @@ button:hover {
    Responsive: Mobile
 ================================ */
 
-@media (max-width: 700px) {
-  .navbar {
-    padding: 0 16px;
-    gap: 18px;
-    overflow-x: auto;
-  }
 
-  .nav-links {
-    gap: 18px;
-    white-space: nowrap;
-  }
 
-  .nav-links a {
-    font-size: 12px;
-  }
+  
 
-  .home-hero {
-    padding: 40px 20px 80px;
-  }
-
-  .home-logo-word {
-    font-size: clamp(72px, 32vw, 100px);
-    line-height: 0.8;
-    transform: translateX(-8px);
-  }
-
-  .latest-releases-row,
-  .merch-preview-grid {
-    grid-template-columns: 1fr;
-    gap: 56px;
-  }
-
-  .latest-image,
-  .merch-image {
-    max-width: 280px;
-    margin: 0 auto;
-  }
-
-  .home-merch-preview {
-    padding: 80px 20px 120px;
-  }
-
-  .release-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .releases-page,
-  .release-detail {
-    padding: 60px 24px;
-  }
-
-  .release-detail-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .release-detail-info {
-    max-width: 100%;
-    text-align: center;
-    align-items: center;
-  }
-
-  .page-header h1 {
-    font-size: clamp(72px, 24vw, 120px);
-  }
-}
 
 /* ================================
    Video Grid / Cards
@@ -758,46 +722,132 @@ button:hover {
   border: 0;
 }
 
-@media (max-width: 1000px) {
-  .video-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+@media (max-width: 1400px) {
+  .navbar {
+    position: relative;
+    padding: 0 20px;
+    overflow: visible;
   }
+
+  .nav-links {
+  width: 100%;
 }
 
-@media (max-width: 700px) {
-  .video-page {
-    padding: 60px 20px 120px;
+.menu-toggle {
+  display: block;
+
+  position: relative;
+
+  z-index: 200;
+
+  margin: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent !important;
+
+  color: white !important;
+
+  font-size: 12px;
+
+  letter-spacing: 0.25em;
+
+  text-transform: uppercase;
+}
+
+  .nav-links {
+    position: fixed;
+    inset: 72px 0 auto 0;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    padding: 40px 20px;
+
+    background: rgba(15, 15, 15, 0.96);
+    border-bottom: 1px solid #222;
+
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+
+    transition:
+      transform 0.4s ease,
+      opacity 0.4s ease;
   }
 
+  .nav-links.nav-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    font-size: 24px;
+    letter-spacing: 0.2em;
+  }
+
+   .home-hero {
+    padding: 40px 20px 80px;
+  }
+
+  .home-logo-word {
+    line-height: 0.8;
+    transform: translateX(-8px);
+  }
+
+  .latest-releases-row,
+  .merch-preview-grid,
   .video-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
-    margin-top: 56px;
+    gap: 56px;
   }
 
-  .video-card {
-    aspect-ratio: 16 / 9;
+  .latest-image,
+  .merch-image {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .home-merch-preview {
+    padding: 80px 20px 120px;
+  }
+
+  .release-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .releases-page,
+  .release-detail,
+  .video-page {
+    padding: 60px 24px;
+  }
+
+  .release-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .release-detail-info {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
   }
 
   .video-overlay {
     opacity: 1;
-    padding: 18px;
   }
 
-  .video-overlay h2 {
-    font-size: 20px;
-  }
 
-  .video-overlay p {
-    font-size: 12px;
-  }
-
-  .video-modal {
-    padding: 20px;
-  }
-
-  .video-modal-inner {
-    width: 100%;
-  }
 }
+
+.menu-toggle:hover {
+  background: transparent !important;
+  color: #aaa;
+} 
+

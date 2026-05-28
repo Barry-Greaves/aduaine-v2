@@ -67,7 +67,7 @@ button:hover {
 
 .navbar {
   height: 72px;
-  padding: 0 40px;
+  padding: 0 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -75,12 +75,31 @@ button:hover {
 }
 
 .logo {
+  min-width: 110px;
+
   color: white;
+
   text-decoration: none;
+
+  overflow: hidden;
+}
+
+.logo-word {
+  display: inline-flex;
+}
+
+.logo-letter {
+  display: inline-block;
+
   font-size: 14px;
-  letter-spacing: 2px;
-  font-weight: bold;
-  transition: 0.3s;
+
+  letter-spacing: 0.18em;
+
+  font-weight: 500;
+}
+
+.logo span {
+  display: inline-block;
 }
 
 .logo:hover {
@@ -142,6 +161,146 @@ button:hover {
 .menu-toggle:hover {
   background: transparent !important;
   color: #aaa;
+}
+.logo {
+  min-width: 110px;
+}
+
+.glitch-logo {
+  position: relative;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.18em;
+}
+
+.glitch-logo.takeover {
+  animation: navTakeoverGlitch 0.9s steps(2, end);
+}
+
+.glitch-logo.takeover::before,
+.glitch-logo.takeover::after {
+  content: "ADUAINE";
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.glitch-logo.takeover::before {
+  color: #ff004c;
+  transform: translateX(-2px);
+}
+
+.glitch-logo.takeover::after {
+  color: #00e5ff;
+  transform: translateX(2px);
+}
+
+@keyframes navTakeoverGlitch {
+  0% {
+    transform: translate(0);
+    filter: blur(0);
+  }
+
+  20% {
+    transform: translate(-2px, 1px);
+    filter: blur(1px);
+  }
+
+  40% {
+    transform: translate(2px, -1px);
+  }
+
+  60% {
+    transform: translate(-1px, 0);
+  }
+
+  80% {
+    transform: translate(1px, 1px);
+    filter: blur(1px);
+  }
+
+  100% {
+    transform: translate(0);
+    filter: blur(0);
+  }
+}
+.glitch-logo {
+  position: relative;
+
+  display: inline-block;
+
+  color: white;
+
+  text-decoration: none;
+
+  letter-spacing: 0.18em;
+
+  animation: glitchPulse 10s infinite;
+}
+
+.glitch-logo::before,
+.glitch-logo::after {
+  content: "ADUAINE";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.glitch-logo::before {
+  color: #ff004c;
+
+  transform: translateX(-2px);
+}
+
+.glitch-logo::after {
+  color: #00e5ff;
+
+  transform: translateX(2px);
+}
+
+@keyframes glitchPulse {
+  0%,
+  92%,
+  100% {
+    transform: translate(0);
+    filter: blur(0);
+  }
+
+  93% {
+    transform: translate(-2px, 1px);
+  }
+
+  94% {
+    transform: translate(2px, -1px);
+  }
+
+  95% {
+    transform: translate(-1px, 0);
+    filter: blur(1px);
+  }
+
+  96% {
+    transform: translate(1px, 1px);
+  }
+
+  97% {
+    transform: translate(0);
+    filter: blur(0);
+  }
+}
+
+.glitch-logo:hover::before,
+.glitch-logo:hover::after {
+  opacity: 0.7;
 }
 
 /* ================================

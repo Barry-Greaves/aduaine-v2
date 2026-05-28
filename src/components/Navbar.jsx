@@ -1,9 +1,21 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import symbolMark from "../assets/images/ui/symbol-mark.png"
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [takeover, setTakeover] = useState(false)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTakeover(true)
+
+      setTimeout(() => {
+        setTakeover(false)
+      }, 900)
+    }, 10000)
+
+    return () => clearInterval(interval)
+  }, [])
 
   function closeMenu() {
     setMenuOpen(false)
@@ -12,10 +24,11 @@ function Navbar() {
   return (
     <nav className="navbar">
       <Link
-      to="/"
-      className="logo"
+        to="/"
+        className={`logo glitch-logo ${takeover ? "takeover" : ""}`}
+        onClick={closeMenu}
       >
-      HOME
+        {takeover ? "ADUAINE" : "HOME"}
       </Link>
 
       <button

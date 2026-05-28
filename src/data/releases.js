@@ -1,6 +1,10 @@
 import cover011Alt from "../assets/images/releases/aduaine-011-alt.jpg"
 import cover010Alt from "../assets/images/releases/aduaine-010-alt.jpg"
 import cover009Alt from "../assets/images/releases/aduaine-009-alt.jpg"
+import cover008Alt from "../assets/images/releases/aduaine-008-alt.jpg"
+import cover007Alt from "../assets/images/releases/aduaine-007-alt.jpg"
+import cover006Alt from "../assets/images/releases/aduaine-006-alt.jpg"
+import cover005Alt from "../assets/images/releases/aduaine-005-alt.jpg"
 import cover011 from "../assets/images/releases/aduaine-011.jpg"
 import cover010 from "../assets/images/releases/aduaine-010.jpg"
 import cover009 from "../assets/images/releases/aduaine-009.jpg"
@@ -61,6 +65,7 @@ catalog:"ADUAINE 008",
 title:"303 Mechanics",
 artist:"cable.percussion",
 cover:cover008,
+hoverCover: cover008Alt,
 formats: ["Tape", "Digital"],
 bandcampEmbed: "https://bandcamp.com/EmbeddedPlayer/album=1352895943/size=large/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/"
 },
@@ -72,6 +77,7 @@ catalog:"ADUAINE 007",
 title:"Telepathic Dissociatives",
 artist:"Sleep Underwriter",
 cover:cover007,
+hoverCover: cover007Alt,
 formats: ["Digital"],
 bandcampEmbed: "https://bandcamp.com/EmbeddedPlayer/album=1858661346/size=large/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/"
 },
@@ -83,6 +89,7 @@ catalog:"ADUAINE 006",
 title:"Archive",
 artist:"Flathan",
 cover:cover006,
+hoverCover: cover006Alt,
 formats: ["Digital"],
 bandcampEmbed: "https://bandcamp.com/EmbeddedPlayer/album=4204322440/size=large/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/"
 },
@@ -94,6 +101,7 @@ catalog:"ADUAINE 005",
 title:"Chrysalis",
 artist:"cable.percussion",
 cover:cover005,
+hoverCover: cover005Alt,
 formats: ["Digital"],
 bandcampEmbed: "https://bandcamp.com/EmbeddedPlayer/album=1328081313/size=large/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/"
 },

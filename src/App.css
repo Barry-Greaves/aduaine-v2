@@ -334,7 +334,45 @@ button:hover {
 /* ================================
    Home Latest Releases
 ================================ */
+.latest-image,
+.merch-image {
+  position: relative;
+}
 
+.view-more-bubble {
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+
+  padding: 12px 18px;
+
+  border-radius: 99px;
+
+  background: rgba(177, 9, 9, 0.75);
+
+ 
+
+  color: white;
+
+  font-size: 11px;
+
+  letter-spacing: 0.2em;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    left 0.12s ease,
+    top 0.12s ease;
+}
+
+.latest-release:hover .view-more-bubble,
+.merch-item:hover .view-more-bubble {
+  opacity: 100%;
+  transform: translate(-50%, -50%) scale(1);
+}
 .latest-block {
   margin-top: 40px;
   width: 100%;
@@ -476,6 +514,88 @@ button:hover {
   display: block;
   color: #666;
   font-size: 15px;
+}
+
+/* ================================
+   Home Video Preview
+================================ */
+
+.home-video-preview {
+  padding: 120px 80px 140px;
+  border-top: 1px solid #151515;
+}
+
+.home-video-preview > p {
+  margin-bottom: 60px;
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.home-video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 72px;
+}
+
+.home-video-card {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.home-video-image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #080808;
+  border: 1px solid #222;
+}
+
+.home-video-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.home-video-card:hover img {
+  transform: scale(1.06);
+  filter: brightness(0.55);
+}
+
+.home-video-play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 36px;
+  opacity: 0;
+  transition: 0.35s ease;
+}
+
+.home-video-card:hover .home-video-play {
+  opacity: 1;
+}
+
+.home-video-info {
+  margin-top: 18px;
+}
+
+.home-video-info h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.home-video-info span {
+  display: block;
+  margin-top: 10px;
+  color: #666;
+  font-size: 14px;
 }
 
 /* ================================
@@ -882,7 +1002,7 @@ button:hover {
   border: 0;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 800px) {
   .navbar {
     position: relative;
     padding: 0 20px;
@@ -960,6 +1080,8 @@ button:hover {
     transform: translateX(-8px);
   }
 
+  
+
   .latest-releases-row,
   .merch-preview-grid,
   .video-grid {
@@ -968,10 +1090,11 @@ button:hover {
   }
 
   .latest-image,
-  .merch-image {
-    max-width: 280px;
-    margin: 0 auto;
-  }
+.merch-image {
+  position: relative;
+}
+
+
 
   .home-merch-preview {
     padding: 80px 20px 120px;
@@ -1002,7 +1125,19 @@ button:hover {
   .video-overlay {
     opacity: 1;
   }
+.site-footer {
+  flex-direction: column;
 
+  gap: 24px;
+
+  padding: 40px 24px;
+
+  text-align: center;
+}
+
+.footer-links {
+  gap: 20px;
+}
 
 }
 
@@ -1011,25 +1146,153 @@ button:hover {
   color: #aaa;
 } 
 
-@media (max-width: 2000px) {
-  .menu-toggle {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
 
-    position: relative;
-    z-index: 9999;
 
-    margin: 0 !important;
-    padding: 0 !important;
+/* ================================
+   Metro Page
+================================ */
+.metro-page {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  background: #000;
+  overflow: hidden;
 
-    border: 0 !important;
-    background: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    color: white !important;
+.metro-video-wipe {
+  width: 100vw;
+  height: calc(100vh - 72px);
+  overflow: hidden;
+  background: #000;
+}
 
-    font-size: 12px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
+.metro-video-wipe iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.metro-enter {
+  position: relative;
+  z-index: 50;
+
+  margin: 0;
+  padding: 32px 56px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(0,0,0,.65);
+
+  color: white;
+
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  animation: metroPulse 3s ease-in-out infinite;
+  transition: all 0.35s ease;
+}
+
+.metro-enter span {
+  font-size: 15px;
+}
+
+.metro-enter small {
+  color: #888;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+}
+
+.metro-enter:hover {
+  background: rgba(255,255,255,.9);
+  color: black;
+  transform: scale(1.05);
+}
+
+.metro-enter:hover small {
+  color: #333;
+}
+
+@keyframes metroPulse {
+  0%, 100% {
+    opacity: 0.78;
   }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.metro-top-mask,
+.metro-bottom-mask {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  height: 80px;
+
+  background: #000;
+
+  z-index: 10;
+
+  pointer-events: none;
+}
+
+.metro-top-mask {
+  top: 0;
+}
+
+.metro-bottom-mask {
+  bottom: 0;
+}
+
+/* ================================
+   Footer
+================================ */
+
+.site-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 32px 80px;
+
+  border-top: 1px solid #151515;
+
+  color: #666;
+
+  font-size: 12px;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+}
+
+.footer-links {
+  display: flex;
+
+  gap: 32px;
+}
+
+.footer-links a {
+  color: #666;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: white;
 }

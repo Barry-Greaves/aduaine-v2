@@ -8,6 +8,8 @@ import Video from "./pages/Video"
 import Mixtapes from "./pages/Mixtapes" 
 import Contact from "./pages/Contact" 
 import ReleaseDetail from "./pages/ReleaseDetail"
+import Metro from "./pages/Metro"
+import Footer from "./components/Footer"
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
@@ -23,8 +25,10 @@ function App() {
         <Route path="/artists" element={<Artists />} />
         <Route path="/video" element={<Video />} />
         <Route path="/Mixtapes" element={<Mixtapes />} />
+        <Route path="/metro" element={<Metro />} />
         <Route path="/Contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }

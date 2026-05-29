@@ -42,8 +42,9 @@ function Navbar() {
       <div className={`nav-links ${menuOpen ? "nav-open" : ""}`}>
         <Link to="/releases" onClick={closeMenu}>Releases</Link>
         <Link to="/video" onClick={closeMenu}>Video</Link>
+        <Link to="/merch" onClick={closeMenu}>Merch</Link>
         <Link to="/artists" onClick={closeMenu}>Artists</Link>
-        <Link to="/mixtapes" onClick={closeMenu}>Mix Tapes</Link>
+        <Link to="/metro" onClick={closeMenu}>Metro</Link>
         <Link to="/contact" onClick={closeMenu}>Contact</Link>
       </div>
     </nav>

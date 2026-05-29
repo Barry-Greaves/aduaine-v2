@@ -8,6 +8,9 @@ import { videos } from "../data/videos"
 import capImage from "../assets/images/merch/sleepunderwriter-cap.jpg"
 import hoodieImage from "../assets/images/merch/hexadecimalera-hoodie.jpg"
 import tshirtImage from "../assets/images/merch/aduaine-tshirt.jpg"
+import capImageAlt from "../assets/images/merch/sleepunderwriter-cap-alt.jpg"
+import hoodieImageAlt from "../assets/images/merch/hexadecimalera-hoodie-alt.jpg"
+import tshirtImageAlt from "../assets/images/merch/aduaine-tshirt-alt.jpg"
 
 function Home() {
   const latestReleases = releases.slice(0, 3)
@@ -126,8 +129,18 @@ function Home() {
 
         <div className="merch-preview-grid">
           <Link to="/merch/tshirt" className="merch-item">
-            <div className="merch-image" onMouseMove={handleMouseMove}>
-              <img src={tshirtImage} alt="Aduaine T-shirt" />
+            <div className="merch-image merch-image-wipe" onMouseMove={handleMouseMove}>
+              <img
+                className="merch-img primary"
+                src={tshirtImage}
+                alt="Aduaine T-shirt"
+              />
+
+              <img
+                className="merch-img secondary"
+                src={tshirtImageAlt}
+                alt="Aduaine T-shirt alternate"
+              />
 
               <motion.span
                 className="view-more-bubble"
@@ -150,8 +163,18 @@ function Home() {
           </Link>
 
           <Link to="/merch/cap" className="merch-item">
-            <div className="merch-image" onMouseMove={handleMouseMove}>
-              <img src={capImage} alt="Sleep Underwriter Cap" />
+            <div className="merch-image merch-image-wipe" onMouseMove={handleMouseMove}>
+              <img
+                className="merch-img primary"
+                src={capImage}
+                alt="Sleep Underwriter Cap"
+              />
+
+              <img
+                className="merch-img secondary"
+                src={capImageAlt}
+                alt="Sleep Underwriter Cap alternate"
+              />
 
               <motion.span
                 className="view-more-bubble"
@@ -174,8 +197,18 @@ function Home() {
           </Link>
 
           <Link to="/merch/hoodie" className="merch-item">
-            <div className="merch-image" onMouseMove={handleMouseMove}>
-              <img src={hoodieImage} alt="Hexadecimal Era Hoodie" />
+            <div className="merch-image merch-image-wipe" onMouseMove={handleMouseMove}>
+              <img
+                className="merch-img primary"
+                src={hoodieImage}
+                alt="Hexadecimal Era Hoodie"
+              />
+
+              <img
+                className="merch-img secondary"
+                src={hoodieImageAlt}
+                alt="Hexadecimal Era Hoodie alternate"
+              />
 
               <motion.span
                 className="view-more-bubble"

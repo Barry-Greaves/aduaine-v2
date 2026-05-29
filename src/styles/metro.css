@@ -1,0 +1,105 @@
+
+
+.metro-page {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  background: #000;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metro-video-wipe {
+  width: 100vw;
+  height: calc(100vh - 72px);
+  overflow: hidden;
+  background: #000;
+}
+
+.metro-video-wipe iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.metro-enter {
+  position: relative;
+  z-index: 50;
+
+  margin: 0;
+  padding: 32px 56px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(0,0,0,.65);
+
+  color: white;
+
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  animation: metroPulse 3s ease-in-out infinite;
+  transition: all 0.35s ease;
+}
+
+.metro-enter span {
+  font-size: 15px;
+}
+
+.metro-enter small {
+  color: #888;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+}
+
+.metro-enter:hover {
+  background: rgba(255,255,255,.9);
+  color: black;
+  transform: scale(1.05);
+}
+
+.metro-enter:hover small {
+  color: #333;
+}
+
+@keyframes metroPulse {
+  0%, 100% {
+    opacity: 0.78;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.metro-top-mask,
+.metro-bottom-mask {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  height: 80px;
+
+  background: #000;
+
+  z-index: 10;
+
+  pointer-events: none;
+}
+
+.metro-top-mask {
+  top: 0;
+}
+
+.metro-bottom-mask {
+  bottom: 0;
+}

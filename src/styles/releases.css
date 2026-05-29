@@ -1,0 +1,138 @@
+
+
+.releases-page {
+  padding: 60px 80px;
+}
+
+.page-header {
+  margin-bottom: 62px;
+  text-align: center;
+}
+
+.page-header h1 {
+  margin: 0 0 20px;
+  font-family: "AdinaO";
+  font-size: clamp(10px, calc(5vw + 1vh), 280px);
+  font-weight: normal;
+  line-height: 1.15;
+}
+
+.page-header p {
+  margin-top: 12px;
+  color: #777;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.releases-title {
+  overflow: hidden;
+}
+
+.releases-title span {
+  display: inline-block;
+  transform-origin: center;
+}
+
+/* ================================
+   Release Grid / Cards
+================================ */
+
+.release-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.release-card {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.release-card:hover {
+  transform:
+    translateY(-8px)
+    scale(1.02);
+}
+
+.release-grid:hover .release-card {
+  opacity: 0.45;
+}
+
+.release-grid .release-card:hover {
+  opacity: 1;
+}
+
+.release-artwork {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid #222;
+  background: #080808;
+}
+
+.release-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.release-image.primary {
+  z-index: 1;
+  transform: scale(1);
+  transition: transform 0.8s ease;
+}
+
+.release-image.secondary {
+  z-index: 2;
+  opacity: 1;
+  clip-path: inset(0 100% 0 0);
+  transform: scale(1.03);
+  transition:
+    clip-path 0.9s cubic-bezier(0.77, 0, 0.18, 1),
+    transform 0.9s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.release-card:hover .release-image.primary {
+  transform: scale(1.03);
+}
+
+.release-card:hover .release-image.secondary {
+  clip-path: inset(0 0 0 0);
+  transform: scale(1);
+}
+
+.release-info {
+  margin-top: 14px;
+  text-align: center;
+}
+
+.release-info p {
+  margin: 0 0 10px;
+  color: #666;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.release-info h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.release-info span {
+  display: block;
+  margin-top: 10px;
+  color: #666;
+  font-size: 13px;
+}

@@ -1,0 +1,143 @@
+@media (max-width: 800px) {
+  .navbar {
+    position: relative;
+    padding: 0 20px;
+    overflow: visible;
+  }
+
+  .nav-links {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: block;
+
+  position: relative;
+
+  z-index: 200;
+
+  margin: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent !important;
+
+  color: white !important;
+
+  font-size: 12px;
+
+  letter-spacing: 0.25em;
+
+  text-transform: uppercase;
+}
+
+  .nav-links {
+    position: fixed;
+    inset: 72px 0 auto 0;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    padding: 40px 20px;
+
+    background: rgba(15, 15, 15, 0.96);
+    border-bottom: 1px solid #222;
+
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+
+    transition:
+      transform 0.4s ease,
+      opacity 0.4s ease;
+  }
+
+  .nav-links.nav-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    font-size: 24px;
+    letter-spacing: 0.2em;
+  }
+
+   .home-hero {
+    padding: 40px 20px 80px;
+  }
+
+  .home-logo-word {
+    line-height: 0.8;
+    transform: translateX(-8px);
+  }
+
+  
+
+  .latest-releases-row,
+  .merch-preview-grid,
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .latest-image,
+.merch-image {
+  position: relative;
+}
+
+
+
+  .home-merch-preview {
+    padding: 80px 20px 120px;
+  }
+
+  .release-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .releases-page,
+  .release-detail,
+  .video-page {
+    padding: 60px 24px;
+  }
+
+  .release-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .release-detail-info {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .video-overlay {
+    opacity: 1;
+  }
+.site-footer {
+  flex-direction: column;
+
+  gap: 24px;
+
+  padding: 40px 24px;
+
+  text-align: center;
+}
+
+.footer-links {
+  gap: 20px;
+}
+
+}
+
+.menu-toggle:hover {
+  background: transparent !important;
+  color: #aaa;
+} 

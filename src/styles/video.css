@@ -1,0 +1,142 @@
+
+
+.video-page {
+  padding: 60px 80px 140px;
+}
+
+.video-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 32px;
+
+  margin-top: 80px;
+}
+
+.video-card {
+  position: relative;
+
+  aspect-ratio: 16 / 9;
+
+  margin: 0;
+  padding: 0;
+
+  border: 1px solid #222;
+
+  overflow: hidden;
+
+  background: #080808;
+
+  cursor: pointer;
+
+  display: block;
+
+  width: 100%;
+}
+
+.video-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform 0.7s ease,
+    filter 0.7s ease;
+}
+
+.video-card:hover img {
+  transform: scale(1.06);
+
+  filter: brightness(0.55);
+}
+
+.video-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  padding: 24px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.85),
+      transparent
+    );
+
+  opacity: 0;
+
+  transition: 0.4s ease;
+}
+
+.video-card:hover .video-overlay {
+  opacity: 1;
+}
+
+.video-overlay span {
+  position: absolute;
+
+  top: 24px;
+
+  right: 24px;
+
+  font-size: 28px;
+}
+
+.video-overlay h2 {
+  margin: 0;
+  font-family: IBM Plex Mono, monospace;
+  font-size: 24px;
+
+  font-weight: 300;
+}
+
+.video-overlay p {
+  margin: 8px 0 0;
+  font-family: IBM Plex Mono, monospace;
+  color: #777;
+
+  font-size: 13px;
+}
+
+.video-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 100;
+
+  background: rgba(0,0,0,.92);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 40px;
+}
+
+.video-modal-inner {
+  width: min(1200px, 90vw);
+
+  aspect-ratio: 16 / 9;
+}
+
+.video-modal iframe {
+  width: 100%;
+
+  height: 100%;
+
+  border: 0;
+}

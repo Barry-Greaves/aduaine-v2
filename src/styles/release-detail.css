@@ -1,0 +1,77 @@
+
+
+.release-detail {
+  padding: 120px 80px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 48px;
+  color: #777;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.back-link:hover {
+  color: white;
+}
+
+.release-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 560px) minmax(320px, 1fr);
+  gap: 96px;
+  align-items: center;
+}
+
+.release-detail-artwork img {
+  width: 100%;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.release-detail-artwork:hover img {
+  transform: scale(1.02);
+}
+
+.release-detail-info {
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.release-detail-info p {
+  color: #777;
+  letter-spacing: 0.35em;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.release-detail-info h1 {
+  margin: 22px 0 10px;
+  font-size: clamp(60px, 8vw, 72px);
+  font-weight: 250;
+  line-height: 1.1;
+}
+
+.release-detail-info h2 {
+  margin: 24px 0 0;
+  color: #666;
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.release-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  margin-top: 34px;
+  color: #666;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}

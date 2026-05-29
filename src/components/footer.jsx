@@ -23,6 +23,13 @@ function Footer() {
         >
           YouTube
         </a>
+        <a
+          href="https://www.instagram.com/aduainemusic/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Instagram
+        </a>
       </div>
     </footer>
   )

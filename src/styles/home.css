@@ -1,0 +1,339 @@
+
+
+.home-page {
+  min-height: calc(100vh - 72px);
+}
+
+.home-hero {
+  padding: 48px 80px 120px;
+  overflow: hidden;
+}
+
+.home-logo-word {
+  font-family: "Aduaine", Arial, sans-serif;
+  font-size: clamp(48px, calc(12vw + 2vh), 540px);
+  font-weight: normal;
+  line-height: 0.8;
+  letter-spacing: 0.02em;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.home-logo-word span {
+  display: inline-block;
+  transform-origin: bottom;
+}
+
+/* ================================
+   Home Latest Releases
+================================ */
+.latest-image,
+.merch-image {
+  position: relative;
+}
+
+.view-more-bubble {
+  position: absolute;
+
+  z-index: 5;
+
+  transform: translate(-50%, -50%);
+
+  padding: 12px 18px;
+
+  border-radius: 99px;
+
+  background: rgba(177, 9, 9, 0.75);
+
+  color: white;
+
+  font-size: 11px;
+
+  letter-spacing: 0.2em;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    left 0.12s ease,
+    top 0.12s ease;
+}
+
+.latest-release:hover .view-more-bubble,
+.merch-item:hover .view-more-bubble {
+  opacity: 100%;
+  transform: translate(-50%, -50%) scale(1);
+}
+.latest-block {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.latest-block > p {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 0 40px;
+  color: #666;
+  font-size: 16px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.latest-releases-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 72px;
+}
+
+.latest-release {
+  text-decoration: none;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.latest-image {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #111;
+}
+
+.latest-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.latest-release:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.1);
+}
+
+.latest-release-info {
+  font-family: "IBM Plex Mono", monospace;  
+  margin-top: 18px;
+  text-align: center;
+}
+
+.latest-release-info p {
+  margin: 0 0 12px;
+  color: #666;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.latest-release-info h2 {
+  font-family: "IBM Plex Mono", monospace;  
+    margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.05;
+}
+
+.latest-release-info span {
+  display: block;
+  margin-top: 12px;
+  color: #666;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+/* ================================
+   Home Merch Preview
+================================ */
+
+.home-merch-preview {
+  padding: 120px 80px 140px;
+  border-top: 1px solid #151515;
+}
+
+.home-merch-preview > p {
+  margin-bottom: 60px;
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.merch-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 72px;
+  width: 100%;
+}
+
+.merch-item {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+.merch-image {
+  overflow: hidden;
+  margin-bottom: 24px;
+  background: #050505;
+}
+
+.merch-image img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.merch-item:hover img {
+  transform: scale(1.03);
+}
+
+.merch-title {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.merch-type {
+  display: block;
+  color: #666;
+  font-size: 15px;
+}
+
+/* ================================
+   Home Video Preview
+================================ */
+
+.home-video-preview {
+  padding: 120px 80px 140px;
+  border-top: 1px solid #151515;
+}
+
+.home-video-preview > p {
+  margin-bottom: 60px;
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.home-video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 72px;
+}
+
+.home-video-card {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.home-video-image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #080808;
+  border: 1px solid #222;
+}
+
+.home-video-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.home-video-card:hover img {
+  transform: scale(1.06);
+  filter: brightness(0.55);
+}
+
+.home-video-play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 36px;
+  opacity: 0;
+  transition: 0.35s ease;
+}
+
+.home-video-card:hover .home-video-play {
+  opacity: 1;
+}
+
+.home-video-info {
+  margin-top: 18px;
+}
+
+.home-video-info h2 {
+  font-family: "IBM Plex Mono", monospace;  
+    margin: 0;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.home-video-info span {
+  display: block;
+  margin-top: 10px;
+  color: #666;
+  font-family: "IBM Plex Mono", monospace;  
+  font-size: 14px;
+}
+
+
+.merch-image-wipe {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.merch-img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
+}
+
+.merch-img.primary {
+  z-index: 1;
+  transform: scale(1);
+  transition: transform 0.8s ease;
+}
+
+.merch-img.secondary {
+  z-index: 2;
+  clip-path: inset(0 100% 0 0);
+  transform: scale(1.03);
+
+  transition:
+    clip-path 0.9s cubic-bezier(0.77, 0, 0.18, 1),
+    transform 0.9s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.merch-item:hover .merch-img.primary {
+  transform: scale(1.03);
+}
+
+.merch-item:hover .merch-img.secondary {
+  clip-path: inset(0 0 0 0);
+  transform: scale(1);
+}

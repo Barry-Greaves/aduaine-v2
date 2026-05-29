@@ -1,0 +1,31 @@
+
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  background: #0f0f0f;
+  color: white;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+button {
+  margin-top: 48px;
+  padding: 16px 32px;
+  background: transparent;
+  color: white;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: white;
+  color: black;
+}

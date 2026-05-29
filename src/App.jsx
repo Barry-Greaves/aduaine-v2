@@ -1,4 +1,12 @@
-import "./App.css"
+import "./styles/global.css"
+import "./styles/navbar.css"
+import "./styles/home.css"
+import "./styles/releases.css"
+import "./styles/video.css"
+import "./styles/metro.css"
+import "./styles/footer.css"
+import "./styles/responsive.css"
+import "./styles/fonts.css"
 
 import Navbar from "./components/Navbar"
 import Home from "./pages/Home"

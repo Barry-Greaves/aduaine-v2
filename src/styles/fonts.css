@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap");
+
+@font-face {
+  font-family: "Aduaine";
+  src: url("/fonts/aduaine1.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Adina";
+  src: url("/fonts/adina.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AdinaO";
+  src: url("/fonts/adinaoutlined.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

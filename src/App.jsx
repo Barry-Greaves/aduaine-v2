@@ -7,7 +7,7 @@ import "./styles/video.css"
 import "./styles/metro.css"
 import "./styles/footer.css"
 import "./styles/responsive.css"
-
+import "./styles/merch.css"
 import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
 import Releases from "./pages/Releases"
@@ -18,6 +18,7 @@ import Contact from "./pages/Contact"
 import ReleaseDetail from "./pages/ReleaseDetail"
 import Metro from "./pages/Metro"
 import Footer from "./components/Footer"
+import Merch from "./pages/Merch"
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
@@ -34,6 +35,7 @@ function App() {
         <Route path="/video" element={<Video />} />
         <Route path="/Mixtapes" element={<Mixtapes />} />
         <Route path="/metro" element={<Metro />} />
+        <Route path="/merch" element={<Merch />} />
         <Route path="/Contact" element={<Contact />} />
       </Routes>
       <Footer />

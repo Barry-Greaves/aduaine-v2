@@ -1,8 +1,20 @@
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { merch } from "../data/merch"
 
 function Merch() {
+  const [cursor, setCursor] = useState({ x: 0, y: 0 })
+
+  function handleMouseMove(e) {
+    const rect = e.currentTarget.getBoundingClientRect()
+
+    setCursor({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    })
+  }
+
   return (
     <main className="merch-page">
       <header className="page-header">
@@ -51,7 +63,10 @@ function Merch() {
             to={`/merch/${item.slug}`}
             className="merch-card"
           >
-            <div className="merch-card-image">
+            <div
+              className="merch-card-image"
+              onMouseMove={handleMouseMove}
+            >
               <img
                 className="merch-card-img primary"
                 src={item.image}
@@ -64,9 +79,20 @@ function Merch() {
                 alt={`${item.title} alternate`}
               />
 
-              <span className="view-more-bubble fixed">
+              <motion.span
+                className="view-more-bubble"
+                animate={{
+                  left: cursor.x,
+                  top: cursor.y,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 250,
+                  damping: 22,
+                }}
+              >
                 View More
-              </span>
+              </motion.span>
             </div>
 
             <div className="merch-card-info">

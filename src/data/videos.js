@@ -53,4 +53,46 @@ export const videos = [
     artist: "Flathan",
     youtubeId: "aBjyk1GF2v8",
   },
+
+  {
+    id: 10,
+    title: "Wyree",
+    artist: "Sleep Underwriter",
+    youtubeId: "XxbufGPD9tY",
+  },
+
+  {
+    id: 11,
+    title: "Fleuxor",
+    artist: "cable.percussion",
+    youtubeId: "yE8aoAGCnMg",
+  },
+
+  {
+    id: 12,
+    title: "Baz Vegas",
+    artist: "Sleep Underwriter",
+    youtubeId: "FaqOdwOw-zs",
+  },
+
+   {
+    id: 13,
+    title: "Xmusv",
+    artist: "Sleep Underwriter",
+    youtubeId: "87McHDTBn_4",
+  },
+
+  {
+    id: 14,
+    title: "Shinkasen Acid",
+    artist: "Crispy Jason",
+    youtubeId: "QtngPl5vDRE",
+  },
+
+  {
+    id: 15,
+    title: "Unstuck",
+    artist: "Sleep Underwriter",
+    youtubeId: "5dvqNycXfFQ",
+  },
 ]

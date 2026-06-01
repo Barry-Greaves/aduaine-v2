@@ -135,6 +135,22 @@
   gap: 20px;
 }
 
+  .contact-page {
+    padding: 60px 24px 120px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+
+  .contact-info {
+    border-left: 0;
+    padding-left: 0;
+    border-top: 1px solid #151515;
+    padding-top: 48px;
+  }
+
 }
 
 .menu-toggle:hover {

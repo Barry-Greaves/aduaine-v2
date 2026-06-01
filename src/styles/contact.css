@@ -1,0 +1,92 @@
+.contact-page {
+  padding: 60px 80px 140px;
+}
+
+.decode-title span {
+  display: inline-block;
+  min-width: 0.7em;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 96px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #777;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #222;
+  background: #080808;
+  color: white;
+  padding: 16px;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-submit {
+  align-self: flex-start;
+  margin-top: 16px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  border-left: 1px solid #151515;
+  padding-left: 48px;
+}
+
+.contact-info h2 {
+  margin: 0 0 12px;
+  color: #666;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.contact-info p,
+.contact-info a {
+  display: block;
+  margin: 0 0 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.contact-info a:hover {
+  color: #aaa; 
+}
+
+.contact-submit {
+  padding: 12px 24px;
+  border: 1px solid #222;
+  background: #080808;
+  color: white;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;}

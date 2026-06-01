@@ -4,6 +4,11 @@
   padding: 60px 80px 140px;
 }
 
+.decode-title span {
+  display: inline-block;
+  min-width: 0.7em;
+}
+
 .video-grid {
   display: grid;
 

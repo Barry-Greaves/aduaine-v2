@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { videos } from "../data/videos"
+import DecodeTitle from "../components/DecodeTitle"
 
 function Video() {
   const [activeVideo, setActiveVideo] = useState(null)
@@ -11,40 +12,10 @@ function Video() {
   return (
     <main className="video-page">
       <header className="page-header">
-        <motion.h1
-          className="releases-title"
-          initial="hidden"
-          animate="visible"
-        >
-          {title.split("").map((letter, index) => (
-            <motion.span
-              key={index}
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  scale: 0,
-                  y: 100,
-                  rotateZ: -180,
-                  filter: "blur(20px)",
-                },
-                visible: {
-                  opacity: 1,
-                  scale: [0, 1.4, 1],
-                  y: [100, -20, 0],
-                  rotateZ: [-90, 10, 0],
-                  filter: ["blur(20px)", "blur(2px)", "blur(0px)"],
-                  transition: {
-                    delay: randomOrder[index] * 0.08,
-                    duration: 1.4,
-                    ease: [0.16, 1, 0.3, 1],
-                  },
-                },
-              }}
-            >
-              {letter}
-            </motion.span>
-          ))}
-        </motion.h1>
+        <DecodeTitle
+  text="VIDEO"
+  className="releases-title decode-title"
+/>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}

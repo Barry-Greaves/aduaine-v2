@@ -20,32 +20,53 @@ function Video() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
+          transition={{ delay: 1, duration: 1 }}
         >
           Visual archive
         </motion.p>
       </header>
 
-      <section className="video-grid">
-        {videos.map((video) => (
-          <button
-            key={video.id}
-            className="video-card"
-            onClick={() => setActiveVideo(video)}
-          >
-            <img
-              src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
-              alt={video.title}
-            />
+    <section className="video-grid">
+  {videos.map((video, index) => (
+    <motion.div
+      key={video.id}
+      className="video-card-wrap"
+      initial={{
+        opacity: 0,
+        y: 20,
+        scale: 1.5,
+        clipPath: "inset(0 100% 0 0)",
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        clipPath: "inset(0 0% 0 0)",
+      }}
+      transition={{
+        delay: 0.8 + index * 0.12,
+        duration: 1.9,
+        ease: [0.77, 0, 0.18, 1],
+      }}
+    >
+      <button
+        className="video-card"
+        onClick={() => setActiveVideo(video)}
+      >
+        <img
+          src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
+          alt={video.title}
+        />
 
-            <div className="video-overlay">
-              <span>▶</span>
-              <h2>{video.title}</h2>
-              <p>{video.artist}</p>
-            </div>
-          </button>
-        ))}
-      </section>
+        <div className="video-overlay">
+          <span>▶</span>
+          <h2>{video.title}</h2>
+          <p>{video.artist}</p>
+        </div>
+      </button>
+    </motion.div>
+  ))}
+</section>
 
       {activeVideo && (
         <div

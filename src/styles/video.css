@@ -9,6 +9,12 @@
   min-width: 0.7em;
 }
 
+.video-card-wrap {
+  overflow: hidden;
+}
+
+
+
 .video-grid {
   display: grid;
 

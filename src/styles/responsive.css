@@ -1,42 +1,48 @@
+/* ================================
+   Responsive: Tablet
+================================ */
+
+@media (max-width: 1200px) {
+  .release-grid,
+  .merch-grid,
+  .artists-grid,
+  .video-grid,
+  .home-video-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ================================
+   Responsive: Mobile
+================================ */
+
 @media (max-width: 800px) {
   .navbar {
-    position: relative;
+    position: sticky;
+    top: 0;
     padding: 0 20px;
     overflow: visible;
   }
 
-  .nav-links {
-  width: 100%;
-}
-
-.menu-toggle {
-  display: block;
-
-  position: relative;
-
-  z-index: 200;
-
-  margin: 0;
-
-  padding: 0;
-
-  border: 0;
-
-  background: transparent !important;
-
-  color: white !important;
-
-  font-size: 12px;
-
-  letter-spacing: 0.25em;
-
-  text-transform: uppercase;
-}
+  .menu-toggle {
+    display: block;
+    position: relative;
+    z-index: 200;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent !important;
+    color: white !important;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
 
   .nav-links {
     position: fixed;
     inset: 72px 0 auto 0;
     z-index: 100;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
@@ -67,7 +73,7 @@
     letter-spacing: 0.2em;
   }
 
-   .home-hero {
+  .home-hero {
     padding: 40px 20px 80px;
   }
 
@@ -76,72 +82,41 @@
     transform: translateX(-8px);
   }
 
-  
-
   .latest-releases-row,
   .merch-preview-grid,
-  .video-grid {
+  .home-video-grid,
+  .video-grid,
+  .merch-grid,
+  .artists-grid,
+  .release-grid {
     grid-template-columns: 1fr;
     gap: 56px;
   }
 
-  .latest-image,
-.merch-image {
-  position: relative;
-}
-
-
-
-  .home-merch-preview {
+  .home-merch-preview,
+  .home-video-preview {
     padding: 80px 20px 120px;
-  }
-
-  .release-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
   }
 
   .releases-page,
   .release-detail,
-  .video-page {
-    padding: 60px 24px;
+  .video-page,
+  .merch-page,
+  .artists-page,
+  .contact-page {
+    padding: 60px 24px 120px;
   }
 
-  .release-detail-grid {
+  .release-detail-grid,
+  .contact-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 64px;
   }
 
   .release-detail-info {
     max-width: 100%;
     text-align: center;
     align-items: center;
-  }
-
-  .video-overlay {
-    opacity: 1;
-  }
-.site-footer {
-  flex-direction: column;
-
-  gap: 24px;
-
-  padding: 40px 24px;
-
-  text-align: center;
-}
-
-.footer-links {
-  gap: 20px;
-}
-
-  .contact-page {
-    padding: 60px 24px 120px;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 64px;
   }
 
   .contact-info {
@@ -151,9 +126,23 @@
     padding-top: 48px;
   }
 
+  .video-overlay {
+    opacity: 1;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  .footer-links {
+    gap: 20px;
+  }
 }
 
 .menu-toggle:hover {
   background: transparent !important;
   color: #aaa;
-} 
+}

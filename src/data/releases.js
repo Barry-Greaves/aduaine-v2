@@ -5,6 +5,9 @@ import cover008Alt from "../assets/images/releases/aduaine-008-alt.jpg"
 import cover007Alt from "../assets/images/releases/aduaine-007-alt.jpg"
 import cover006Alt from "../assets/images/releases/aduaine-006-alt.jpg"
 import cover005Alt from "../assets/images/releases/aduaine-005-alt.jpg"
+import cover004Alt from "../assets/images/releases/aduaine-004-alt.jpg"
+import cover003Alt from "../assets/images/releases/aduaine-003-alt.jpg"
+import cover001Alt from "../assets/images/releases/aduaine-001-alt.jpg"
 import cover011 from "../assets/images/releases/aduaine-011.jpg"
 import cover010 from "../assets/images/releases/aduaine-010.jpg"
 import cover009 from "../assets/images/releases/aduaine-009.jpg"
@@ -113,6 +116,7 @@ catalog:"ADUAINE 004",
 title:"Offworld Isomer",
 artist:"Sleep Underwriter",
 cover:cover004,
+hoverCover: cover004Alt,
 formats: ["Digital"],
 bandcampEmbed: "https://bandcamp.com/EmbeddedPlayer/album=2504777270/size=large/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/"
 },
@@ -124,6 +128,7 @@ catalog:"ADUAINE 003",
 title:"Cloud Realm",
 artist:"Rain",
 cover:cover003,
+hoverCover: cover003Alt,
 formats: ["Digital"],
 bandcampEmbed: "https://bandcamp.com/EmbeddedPlayer/album=1530399116/size=large/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/"
 },
@@ -147,6 +152,7 @@ catalog:"ADUAINE 001",
 title:"Listen and See",
 artist:"Various Artists",
 cover:cover001,
+hoverCover: cover001Alt,
 formats: ["Digital"],
 bandcampEmbed: "https://bandcamp.com/EmbeddedPlayer/album=2677842214/size=large/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/"
 },

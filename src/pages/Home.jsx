@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { releases } from "../data/releases"
 import { videos } from "../data/videos"
 import ReleaseCard from "../components/ReleaseCard"
-import TiledTitle from "../components/TiledTitle"
+import KineticHero from "../components/KineticHero"
 
 function Home() {
   const latestReleases = releases.slice(0, 3)
@@ -11,9 +11,8 @@ function Home() {
 
   return (
     <main className="page home-page">
-      <section className="home-hero">
-        <TiledTitle text="Aduaine" rows={4} font="veloce" />
-      </section>
+      <h1 className="sr-only">Aduaine</h1>
+      <KineticHero />
 
       <section className="home-section">
         <header className="section-head">

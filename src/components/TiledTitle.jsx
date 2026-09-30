@@ -2,13 +2,14 @@
 // frame edge on purpose. Rows arrive glitched, settle, then periodically slip.
 // font: "veloce" | "adina" | "hyper" | "mayhem"
 
-function TiledTitle({ text, rows = 3, font = "adina", className = "" }) {
+function TiledTitle({ text, rows = 3, font = "adina", className = "", as: Tag = "h1" }) {
   const label = text.toUpperCase()
 
   return (
-    <h1
+    <Tag
       className={`tiled-title tiled-${font} ${className}`}
       aria-label={text}
+      role={Tag === "h1" ? undefined : "img"}
     >
       {Array.from({ length: rows }, (_, i) => (
         <span
@@ -25,7 +26,7 @@ function TiledTitle({ text, rows = 3, font = "adina", className = "" }) {
           ))}
         </span>
       ))}
-    </h1>
+    </Tag>
   )
 }
 

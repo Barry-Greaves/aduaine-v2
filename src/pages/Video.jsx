@@ -1,79 +1,48 @@
-import { useState } from "react"
-import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
 import { videos } from "../data/videos"
-import DecodeTitle from "../components/DecodeTitle"
+import TiledTitle from "../components/TiledTitle"
 
 function Video() {
   const [activeVideo, setActiveVideo] = useState(null)
 
-  const title = "VIDEO"
-  const randomOrder = [2, 0, 4, 1, 3]
+  useEffect(() => {
+    if (!activeVideo) return
+    const onKey = (e) => e.key === "Escape" && setActiveVideo(null)
+    window.addEventListener("keydown", onKey)
+    return () => window.removeEventListener("keydown", onKey)
+  }, [activeVideo])
 
   return (
-    <main className="video-page">
+    <main className="page video-page">
       <header className="page-header">
-        <DecodeTitle
-  text="VIDEO"
-  className="releases-title decode-title"
-/>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 1 }}
-        >
-          Visual archive
-        </motion.p>
+        <TiledTitle text="Video" rows={2} font="adina" />
+        <p className="page-sub">Visual archive / {videos.length} entries</p>
       </header>
 
-    <section className="video-grid">
-  {videos.map((video, index) => (
-    <motion.div
-      key={video.id}
-      className="video-card-wrap"
-      initial={{
-        opacity: 0,
-        y: 20,
-        scale: 1.5,
-        clipPath: "inset(0 100% 0 0)",
-      }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        clipPath: "inset(0 0% 0 0)",
-      }}
-      transition={{
-        delay: 0.8 + index * 0.12,
-        duration: 1.9,
-        ease: [0.77, 0, 0.18, 1],
-      }}
-    >
-      <button
-        className="video-card"
-        onClick={() => setActiveVideo(video)}
-      >
-        <img
-          src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
-          alt={video.title}
-        />
-
-        <div className="video-overlay">
-          <span>▶</span>
-          <h2>{video.title}</h2>
-          <p>{video.artist}</p>
-        </div>
-      </button>
-    </motion.div>
-  ))}
-</section>
+      <section className="video-grid">
+        {videos.map((video) => (
+          <button
+            key={video.id}
+            type="button"
+            className="video-card"
+            onClick={() => setActiveVideo(video)}
+          >
+            <img
+              src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
+              alt={video.title}
+              loading="lazy"
+            />
+            <span className="video-meta">
+              <strong>{video.title}</strong>
+              <em>{video.artist}</em>
+            </span>
+          </button>
+        ))}
+      </section>
 
       {activeVideo && (
-        <div
-          className="video-modal"
-          onClick={() => setActiveVideo(null)}
-        >
-          <div className="video-modal-inner">
+        <div className="video-modal" onClick={() => setActiveVideo(null)}>
+          <div className="video-modal-inner" onClick={(e) => e.stopPropagation()}>
             <iframe
               src={`https://www.youtube.com/embed/${activeVideo.youtubeId}?autoplay=1`}
               title={activeVideo.title}
@@ -81,6 +50,9 @@ function Video() {
               allowFullScreen
             />
           </div>
+          <button type="button" className="video-close" onClick={() => setActiveVideo(null)}>
+            Close
+          </button>
         </div>
       )}
     </main>

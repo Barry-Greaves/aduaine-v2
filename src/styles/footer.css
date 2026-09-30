@@ -1,138 +1,26 @@
-/* ================================
-   Footer
-================================ */
-
 .site-footer {
   display: flex;
-
+  align-items: flex-end;
   justify-content: space-between;
-
-  align-items: center;
-
-  padding: 32px 80px;
-
-  border-top: 1px solid #151515;
-
-  color: #666;
-
-  font-size: 12px;
-
-  letter-spacing: 0.2em;
-
-  text-transform: uppercase;
+  gap: 24px;
+  padding: 32px var(--gutter);
+  background: var(--bg);
+  border-top: 1px solid var(--line);
 }
-
-/* =================================
-   Footer Brand / Metro Easter Egg
-================================= */
 
 .footer-brand {
-  margin: 0;
   padding: 0;
-
+  background: transparent;
   border: 0;
-
-  background: transparent !important;
-
-  color: #666;
-
-  font-family: "IBM Plex Mono", monospace;
-
-  font-size: 12px;
-
-  letter-spacing: 0.2em;
-
-  text-transform: uppercase;
-
+  color: var(--fg);
+  font-family: "Adina", sans-serif;
+  font-size: clamp(36px, 8vw, 96px);
+  line-height: 0.85;
+  letter-spacing: 0.02em;
   cursor: default;
-
-  transition:
-    color 0.3s ease,
-    opacity 0.3s ease;
 }
+.footer-brand.metro-active { color: #f5d800; cursor: pointer; text-shadow: -3px 0 var(--break-r), 3px 0 var(--break-b); }
 
-.footer-brand:hover {
-  background: transparent !important;
-
-  color: #aaa;
-}
-
-.footer-brand.metro-active {
-  color: rgb(246, 255, 0);
-
-  cursor: pointer;
-
-  animation: footerMetroGlitch 0.9s steps(2, end);
-}
-
-@keyframes footerMetroGlitch {
-  0% {
-    transform: translate(0);
-    filter: blur(0);
-  }
-
-  20% {
-    transform: translate(-2px, 1px);
-    filter: blur(1px);
-  }
-
-  40% {
-    transform: translate(2px, -1px);
-  }
-
-  60% {
-    transform: translate(-1px, 0);
-    filter: blur(1px);
-  }
-
-  80% {
-    transform: translate(1px, 1px);
-  }
-
-  100% {
-    transform: translate(0);
-    filter: blur(0);
-  }
-}
-
-/* =================================
-   Footer Links
-================================= */
-
-.footer-links {
-  display: flex;
-
-  gap: 32px;
-}
-
-.footer-links a {
-  color: #666;
-
-  text-decoration: none;
-
-  transition: 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: white;
-}
-
-/* =================================
-   Mobile
-================================= */
-
-@media (max-width: 800px) {
-  .site-footer {
-    flex-direction: column;
-
-    gap: 24px;
-
-    padding: 40px 24px;
-
-    text-align: center;
-  }
-
-  .footer-links {
-    gap: 20px;
-  }
-}
+.footer-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.footer-links a { text-transform: uppercase; letter-spacing: 0.16em; font-size: 12px; color: var(--dim); }
+.footer-links a:hover { color: var(--fg); }

@@ -1,148 +1,35 @@
-/* ================================
-   Responsive: Tablet
-================================ */
-
-@media (max-width: 1200px) {
-  .release-grid,
-  .merch-grid,
-  .artists-grid,
-  .video-grid,
-  .home-video-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+@media (max-width: 900px) {
+  .release-detail-grid, .contact-grid { grid-template-columns: 1fr; }
 }
 
-/* ================================
-   Responsive: Mobile
-================================ */
-
-@media (max-width: 800px) {
-  .navbar {
-    position: sticky;
-    top: 0;
-    padding: 0 20px;
-    overflow: visible;
-  }
-
-  .menu-toggle {
-    display: block;
-    position: relative;
-    z-index: 200;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: transparent !important;
-    color: white !important;
-    font-size: 12px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-  }
+@media (max-width: 720px) {
+  .menu-toggle { display: block; }
 
   .nav-links {
+    display: none;
     position: fixed;
-    inset: 72px 0 auto 0;
-    z-index: 100;
-    width: 100%;
-
-    display: flex;
+    inset: var(--nav-h) 0 0 0;
     flex-direction: column;
-    gap: 28px;
-
-    padding: 40px 20px;
-
-    background: rgba(15, 15, 15, 0.96);
-    border-bottom: 1px solid #222;
-
-    transform: translateY(-120%);
-    opacity: 0;
-    pointer-events: none;
-
-    transition:
-      transform 0.4s ease,
-      opacity 0.4s ease;
+    gap: 0;
+    padding: 24px var(--gutter);
+    background: var(--bg);
+    z-index: 19;
   }
-
-  .nav-links.nav-open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-
+  .nav-links.nav-open { display: flex; }
   .nav-links a {
-    font-size: 24px;
-    letter-spacing: 0.2em;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: "Hyper", "Adina", sans-serif;
+    font-size: 40px;
+    letter-spacing: 0;
+    color: var(--fg);
   }
 
-  .home-hero {
-    padding: 40px 20px 80px;
-  }
-
-  .home-logo-word {
-    line-height: 0.8;
-    transform: translateX(-8px);
-  }
-
-  .latest-releases-row,
-  .merch-preview-grid,
-  .home-video-grid,
-  .video-grid,
-  .merch-grid,
-  .artists-grid,
-  .release-grid {
-    grid-template-columns: 1fr;
-    gap: 56px;
-  }
-
-  .home-merch-preview,
-  .home-video-preview {
-    padding: 80px 20px 120px;
-  }
-
-  .releases-page,
-  .release-detail,
-  .video-page,
-  .merch-page,
-  .artists-page,
-  .contact-page {
-    padding: 60px 24px 120px;
-  }
-
-  .release-detail-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 64px;
-  }
-
-  .release-detail-info {
-    max-width: 100%;
-    text-align: center;
-    align-items: center;
-  }
-
-  .contact-info {
-    border-left: 0;
-    padding-left: 0;
-    border-top: 1px solid #151515;
-    padding-top: 48px;
-  }
-
-  .video-overlay {
-    opacity: 1;
-  }
-
-  .site-footer {
-    flex-direction: column;
-    gap: 24px;
-    padding: 40px 24px;
-    text-align: center;
-  }
-
-  .footer-links {
-    gap: 20px;
-  }
+  .site-footer { flex-direction: column; align-items: flex-start; }
+  .release-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .release-info h2 { font-size: 14px; }
 }
 
-.menu-toggle:hover {
-  background: transparent !important;
-  color: #aaa;
+@media (max-width: 420px) {
+  .release-grid { grid-template-columns: 1fr; }
 }

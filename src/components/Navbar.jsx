@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -8,10 +8,7 @@ function Navbar() {
   useEffect(() => {
     const interval = setInterval(() => {
       setTakeover(true)
-
-      setTimeout(() => {
-        setTakeover(false)
-      }, 900)
+      setTimeout(() => setTakeover(false), 900)
     }, 10000)
 
     return () => clearInterval(interval)
@@ -21,11 +18,17 @@ function Navbar() {
     setMenuOpen(false)
   }
 
+  function pulse() {
+    window.dispatchEvent(
+      new CustomEvent("aduaine-glitch", { detail: { power: 0.5 } })
+    )
+  }
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${menuOpen ? "menu-is-open" : ""}`}>
       <Link
         to="/"
-        className={`logo glitch-logo ${takeover ? "takeover" : ""}`}
+        className={`logo ${takeover ? "takeover" : ""}`}
         onClick={closeMenu}
       >
         {takeover ? "ADUAINE" : "HOME"}
@@ -34,17 +37,22 @@ function Navbar() {
       <button
         type="button"
         className="menu-toggle"
+        aria-expanded={menuOpen}
         onClick={() => setMenuOpen(!menuOpen)}
       >
         {menuOpen ? "Close" : "Menu"}
       </button>
 
       <div className={`nav-links ${menuOpen ? "nav-open" : ""}`}>
-        <Link to="/releases" onClick={closeMenu}>Releases</Link>
-        <Link to="/video" onClick={closeMenu}>Video</Link>
-        <Link to="/merch" onClick={closeMenu}>Merch</Link>
-        <Link to="/artists" onClick={closeMenu}>Artists</Link>
-        <Link to="/contact" onClick={closeMenu}>Contact</Link>
+        {[
+          ["/releases", "Releases"],
+          ["/video", "Video"],
+          ["/contact", "Contact"],
+        ].map(([to, label]) => (
+          <NavLink key={to} to={to} onClick={closeMenu} onMouseEnter={pulse}>
+            {label}
+          </NavLink>
+        ))}
       </div>
     </nav>
   )

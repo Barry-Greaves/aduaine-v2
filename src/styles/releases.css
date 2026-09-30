@@ -1,139 +1,46 @@
-
-
-.releases-page {
-  padding: 60px 80px;
-}
-
-.page-header {
-  margin-bottom: 62px;
-  text-align: center;
-}
-
-.page-header h1 {
-  margin: 0 0 20px;
-  font-family: "AdinaO";
-  font-size: clamp(10px, calc(5vw + 1vh), 280px);
-  font-weight: normal;
-  line-height: 1.15;
-}
-
-.page-header p {
-  margin-top: 12px;
-  color: #777;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  font-size: 12px;
-}
-
-.releases-title {
-  overflow: hidden;
-}
-
-.releases-title span {
-  display: inline-block;
-  transform-origin: center;
-}
-
-/* ================================
-   Release Grid / Cards
-================================ */
-
 .release-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: 0;
+  border-width: 1px 0 0 1px;
+  border-style: solid;
+  border-color: var(--line);
 }
 
-.release-card {
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-  transition:
-    transform 0.35s ease,
-    opacity 0.35s ease;
+.release-card { display: block; background: var(--bg); border: solid var(--line); border-width: 0 1px 1px 0; }
+
+.release-artwork { position: relative; aspect-ratio: 1; overflow: hidden; background: #000; }
+.release-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.release-image.primary { filter: grayscale(1) contrast(1.05); }
+.release-image.secondary { opacity: 0; }
+
+.release-card:hover .release-image.primary { animation: fringe 0.45s steps(1) forwards; filter: grayscale(0); }
+.release-card:hover .release-image.secondary { animation: slice 0.5s steps(1) forwards; }
+
+@keyframes slice {
+  0% { opacity: 1; clip-path: polygon(0 18%, 100% 18%, 100% 32%, 0 32%); transform: translateX(3%); }
+  20% { clip-path: polygon(0 60%, 100% 60%, 100% 74%, 0 74%); transform: translateX(-4%); }
+  40% { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); transform: translateX(2%); }
+  60% { clip-path: polygon(0 38%, 100% 38%, 100% 100%, 0 100%); transform: translateX(-2%); }
+  80% { clip-path: inset(0); transform: translateX(1%); }
+  100% { opacity: 1; clip-path: inset(0); transform: none; }
 }
 
-.release-card:hover {
-  transform:
-    translateY(-8px)
-    scale(1.02);
-}
+.release-info { padding: 14px 16px 18px; }
+.release-info p { margin: 0; color: var(--dim); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; }
+.release-info h2 { margin: 6px 0 4px; font-family: "Hyper", "Adina", sans-serif; font-weight: normal; font-size: 17px; line-height: 1.15; text-transform: uppercase; overflow-wrap: anywhere; }
+.release-info span { color: var(--dim); font-size: 13px; }
 
-.release-grid:hover .release-card {
-  opacity: 0.45;
-}
+/* ---------- release detail ---------- */
+.release-detail { padding-top: 32px; }
+.back-link { display: inline-block; margin-bottom: 32px; color: var(--dim); text-transform: uppercase; letter-spacing: 0.16em; font-size: 12px; }
+.back-link:hover { color: var(--fg); }
 
-.release-grid .release-card:hover {
-  opacity: 1;
-}
-
-.release-artwork {
-  position: relative;
-  aspect-ratio: 1;
-  overflow: hidden;
-  border: 1px solid #222;
-  background: #080808;
-}
-
-.release-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-.release-image.primary {
-  z-index: 1;
-  transform: scale(1);
-  transition: transform 0.8s ease;
-}
-
-.release-image.secondary {
-  z-index: 2;
-  opacity: 1;
-  clip-path: inset(0 100% 0 0);
-  transform: scale(1.03);
-  transition:
-    clip-path 0.9s cubic-bezier(0.77, 0, 0.18, 1),
-    transform 0.9s cubic-bezier(0.77, 0, 0.18, 1);
-}
-
-.release-card:hover .release-image.primary {
-  transform: scale(1.03);
-}
-
-.release-card:hover .release-image.secondary {
-  clip-path: inset(0 0 0 0);
-  transform: scale(1);
-}
-
-.release-info {
-  margin-top: 14px;
-  text-align: center;
-}
-
-.release-info p {
-  margin: 0 0 10px;
-  color: #666;
-  font-size: 10px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-}
-
-.release-info h2 {
-  margin: 0;
-  font-family:'ibm-plex-mono', monospace;
-  font-size: 28px;
-  font-weight: 300;
-  line-height: 1.1;
-}
-
-.release-info span {
-  display: block;
-  margin-top: 10px;
-  color: #666;
-  font-size: 13px;
-}
+.release-detail-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 64px); align-items: start; }
+.release-detail-artwork { border: 1px solid var(--line); background: #000; }
+.release-detail-artwork img { width: 100%; height: auto; }
+.release-detail-info p { margin: 0; color: var(--dim); letter-spacing: 0.18em; text-transform: uppercase; font-size: 12px; }
+.release-detail-info h1 { margin: 12px 0 8px; font-family: "Hyper", "Adina", sans-serif; font-weight: normal; font-size: clamp(24px, 3.6vw, 52px); line-height: 1; text-transform: uppercase; overflow-wrap: anywhere; }
+.release-detail-info h2 { margin: 0 0 24px; font-weight: 400; font-size: 16px; color: var(--dim); }
+.release-meta { padding-top: 16px; border-top: 1px solid var(--fg); text-transform: uppercase; letter-spacing: 0.16em; font-size: 12px; }
+.bandcamp-section { margin-top: 48px; background: #333; border: 1px solid var(--line); }

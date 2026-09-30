@@ -6,39 +6,33 @@ import "./styles/releases.css"
 import "./styles/video.css"
 import "./styles/metro.css"
 import "./styles/footer.css"
-import "./styles/merch.css"
 import "./styles/contact.css"
-import "./styles/artists.css"
 import "./styles/responsive.css"
+import GlitchField from "./components/GlitchField"
 import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
 import Releases from "./pages/Releases"
-import Artists from "./pages/Artists"
 import Video from "./pages/Video" 
-import Mixtapes from "./pages/Mixtapes" 
 import Contact from "./pages/Contact" 
 import ReleaseDetail from "./pages/ReleaseDetail"
 import Metro from "./pages/Metro"
-import Footer from "./components/Footer"
-import Merch from "./pages/Merch"
+import Footer from "./components/footer"
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 function App() {
   return (
     <BrowserRouter basename="/aduaine-v2">
+      <GlitchField />
       <Navbar />
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/releases" element={<Releases />} />
         <Route path="/releases/:slug" element={<ReleaseDetail />} />
-        <Route path="/artists" element={<Artists />} />
         <Route path="/video" element={<Video />} />
-        <Route path="/Mixtapes" element={<Mixtapes />} />
         <Route path="/metro" element={<Metro />} />
-        <Route path="/merch" element={<Merch />} />
-        <Route path="/Contact" element={<Contact />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </BrowserRouter>

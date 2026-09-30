@@ -8,7 +8,7 @@ function ReleaseDetail() {
 
   if (!release) {
     return (
-      <main className="release-detail">
+      <main className="page release-detail">
         <h1>Release not found</h1>
 
         <Link to="/releases" className="back-link">
@@ -19,7 +19,7 @@ function ReleaseDetail() {
   }
 
   return (
-    <main className="release-detail">
+    <main className="page release-detail">
       <Link to="/releases" className="back-link">
         ← Back to releases
       </Link>
@@ -39,8 +39,6 @@ function ReleaseDetail() {
           <div className="release-meta">
             <span>{release.formats?.join(" / ")}</span>
           </div>
-
-          <button>Listen</button>
         </div>
       </section>
 

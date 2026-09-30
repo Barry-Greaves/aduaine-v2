@@ -1,17 +1,23 @@
-import { motion } from "framer-motion"
-import DecodeTitle from "../components/DecodeTitle"
+import TiledTitle from "../components/TiledTitle"
 
 function Contact() {
-  return (
-    <main className="contact-page">
-      <header className="page-header">
-        <DecodeTitle text="CONTACT" className="releases-title decode-title" />
+  function handleSubmit(e) {
+    e.preventDefault()
+    const f = new FormData(e.currentTarget)
+    const subject = encodeURIComponent(`[${f.get("type")}] ${f.get("name") || "Enquiry"}`)
+    const body = encodeURIComponent(`${f.get("message")}\n\n${f.get("name")} <${f.get("email")}>`)
+    window.location.href = `mailto:aduainemusic@email.com?subject=${subject}&body=${body}`
+  }
 
-        <p>Signal / Transmission / Enquiries</p>
+  return (
+    <main className="page contact-page">
+      <header className="page-header">
+        <TiledTitle text="Contact" rows={2} font="adina" />
+        <p className="page-sub">Signal / Transmission / Enquiries</p>
       </header>
 
       <section className="contact-grid">
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
           <label>
             Name
             <input type="text" name="name" />
@@ -19,7 +25,7 @@ function Contact() {
 
           <label>
             Email
-            <input type="email" name="email" />
+            <input type="email" name="email" required />
           </label>
 
           <label>
@@ -27,7 +33,6 @@ function Contact() {
             <select name="type">
               <option>General</option>
               <option>Releases</option>
-              <option>Merch</option>
               <option>Visual / Video</option>
               <option>Collaboration</option>
             </select>
@@ -35,7 +40,7 @@ function Contact() {
 
           <label>
             Message
-            <textarea name="message" rows="7" />
+            <textarea name="message" rows="7" required />
           </label>
 
           <button type="submit" className="contact-submit">
@@ -61,9 +66,6 @@ function Contact() {
             </a>
             <a href="https://youtube.com/@Aduaine" target="_blank" rel="noreferrer">
               YouTube
-            </a>
-            <a href="https://www.etsy.com/shop/Aduaine" target="_blank" rel="noreferrer">
-              Etsy
             </a>
             <a href="https://instagram.com/aduainemusic" target="_blank" rel="noreferrer">
               Instagram

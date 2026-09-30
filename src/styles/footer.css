@@ -13,7 +13,7 @@
   background: transparent;
   border: 0;
   color: var(--fg);
-  font-family: "Adina", sans-serif;
+  font-family: "RPVeloce", "Adina", sans-serif;
   font-size: clamp(36px, 8vw, 96px);
   line-height: 0.85;
   letter-spacing: 0.02em;

@@ -12,9 +12,11 @@
 }
 
 .logo {
-  font-family: "Adina", sans-serif;
-  font-size: 30px;
-  letter-spacing: 0.04em;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
   line-height: 1;
 }
 .logo.takeover {
